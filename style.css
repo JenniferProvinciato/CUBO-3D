@@ -1,0 +1,99 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  perspective: 700px;
+  transition: all 0.5s;
+  background: red;
+  background: radial-gradient(red, black);
+}
+body:hover {
+  perspective: 1500px;
+}
+.cube {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  transition: all 10s;
+  transform: rotateZ(0) rotateX(0) rotateY(310deg);
+  transform-style: preserve-3d;
+  animation: spin 5s infinite linear;
+}
+.cube:hover {
+  transform: rotateZ(10deg) rotateX(90deg) rotateY(310deg);
+}
+
+.face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.face:nth-child(1) {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(./images/Coringa.JPG);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform-origin: center left;
+  transform: rotateX(90deg) translateZ(-250px) rotateY(90deg) translateX(-500px);
+}
+.face:nth-child(2) {
+  background-image: url(./images/mulhergato.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform-origin: center right;
+  transform: rotateY(90deg) translateX(250px) translateY(0px);
+}
+.face:nth-child(3) {
+  background-image: url(./images/capitaoamerica.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-origin: center left;
+  transform: rotateX(90deg) translateZ(250px);
+}
+.face:nth-child(4) {
+  background-image: url(./images/arqueiro.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-origin: center left;
+  transform: rotateX(90deg) translateZ(-250px);
+}
+.face:nth-child(5) {
+  background-image: url(./images/nuclear.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-origin: center left;
+  transform: translateZ(-250px);
+}
+.face:nth-child(6) {
+  background-image: url(./images/batman1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-origin: center left;
+  transform: translateZ(250px);
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
